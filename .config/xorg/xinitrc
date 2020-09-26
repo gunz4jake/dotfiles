@@ -1,0 +1,6 @@
+xrandr --output DisplayPort-1 --mode 2560x1440 --rate 144 --primary --output DisplayPort-2 --mode 1920x1080 --rate 144 --right-of DisplayPort-1 &
+xsetroot -cursor_name left_ptr
+sudo modprobe i2c-dev
+sudo modprobe i2c-piix4 &
+sudo openrgb -p /home/jacob/Documents/Blue.orp &
+exec dbus-launch --exit-with-session xmonad
