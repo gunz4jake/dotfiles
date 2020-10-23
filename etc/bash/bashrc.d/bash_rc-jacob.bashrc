@@ -10,3 +10,5 @@ pfetch
   alias sd='loginctl poweroff'
   alias scl='make clean && rm -f config.h && git reset --hard origin/master'
   alias dep='yay -Rsn $(yay -Qdtq)'
+  alias svm="sudo virsh start GamerVM"
+  alias ntl="sudo virsh start NTLite"
