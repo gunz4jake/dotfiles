@@ -246,9 +246,7 @@ windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 myStartupHook = do
-                spawnOnce "pulseaudio --start &"
-                spawnOnce "/home/jacob/.config/fehbg &"
-                spawnOnce "picom -cCGf &"
+                spawnOnce "/home/jacob/Scripts/startup.sh &"
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
@@ -287,7 +285,7 @@ defaults = def {
 main = do
   xmproc0 <- spawnPipe "xmobar -x 0 /home/jacob/.config/xmobar/xmobarrc0"
   xmproc1 <- spawnPipe "xmobar -x 1 /home/jacob/.config/xmobar/xmobarrc1"
-  xmonad $ docks def
+  xmonad $ ewmh $ docks def
         { terminal           = myTerminal
         , focusFollowsMouse  = myFocusFollowsMouse
         , clickJustFocuses   = myClickJustFocuses
