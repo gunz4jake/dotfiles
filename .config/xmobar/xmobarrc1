@@ -51,7 +51,7 @@ Config {
 
 
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"MEM: <usedratio>%"
+        , Run Memory         [ "--template" ,"Mem: <usedratio>%"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "90"        -- units: %
                              , "--low"      , "white"
@@ -70,7 +70,7 @@ Config {
         , Run StdinReader
 
         , Run DiskU [("/", "<free>")]
-                    ["-L", "20", "-H", "50", "-m", "1", "-p", "3"]
-                    20
+                ["-L", "20", "-H", "50", "-m", "1", "-p", "3"]
+                20
         ]
    }
