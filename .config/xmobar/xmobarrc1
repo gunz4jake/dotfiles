@@ -2,11 +2,11 @@ Config {
 
    -- appearance
      font =         "xft:IBM Plex Serif:size=10:antialias=true"
-   , bgColor =      "#363d4b"
-   , fgColor =      "#FFFFFF"
+   , bgColor =      "#282a36"
+   , fgColor =      "#f8f8f2"
    , position =     Top
    , border =       BottomB
-   , borderColor =  "#2f3542"
+   , borderColor =  "#282a36"
 
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
@@ -41,36 +41,36 @@ Config {
         [ Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s | <rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
-                             , "--low"      , "white"
-                             , "--normal"   , "#D08770"
-                             , "--high"     , "#BF616A"
+                             , "--low"      , "#f8f8f2"
+                             , "--normal"   , "#8be9fd"
+                             , "--high"     , "#ff5555"
                              ] 10
 
         -- Cpu usage in percent
-        , Run Cpu ["-t", "CPU: <total>%","-H","50","--high","#BF616A"] 10
+        , Run Cpu ["-t", "CPU: <total>%","-H","50","--high","#ff5555"] 10
 
 
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+        , Run Memory         [ "--template" ,"MEM: <usedratio>%"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "90"        -- units: %
-                             , "--low"      , "white"
-                             , "--normal"   , "#D08770"
-                             , "--high"     , "#BF616A"
+                             , "--low"      , "#f8f8f2"
+                             , "--normal"   , "#8be9fd"
+                             , "--high"     , "#ff5555"
                              ] 10
 
         -- time and date indicator
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=white>%D (%a) %r</fc>" "date" 10
+        , Run Date           "<fc=#f8f8f2>%D (%a) %r</fc>" "date" 10
 
         -- keyboard layout indicator
         , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
-                             , ("us"         , "<fc=#BF616A>US</fc>")
+                             , ("us"         , "<fc=#ff5555>US</fc>")
                              ]
         , Run StdinReader
 
         , Run DiskU [("/", "<free>")]
-                ["-L", "20", "-H", "50", "-m", "1", "-p", "3"]
-                20
+                    ["-L", "20", "-H", "50", "-m", "1", "-p", "3"]
+                    20
         ]
    }
