@@ -45,8 +45,8 @@ myBorderWidth   = 2
 
 
 -- Border Colors
-myNormalBorderColor  = "#434c5e"
-myFocusedBorderColor = "#82abaa"
+myNormalBorderColor  = "#282a36"
+myFocusedBorderColor = "#ff79c6"
 
 -- Key bindings. Add, modify or remove key bindings here.
 
@@ -301,13 +301,13 @@ main = do
         , handleEventHook    = myEventHook
         , logHook            = myLogHook <+> dynamicLogWithPP xmobarPP
                         { ppOutput = \x -> hPutStrLn xmproc0 x  >> hPutStrLn xmproc1 x
-                        , ppCurrent = xmobarColor "#A3BE8C" "" . wrap "[" "]"
-                        , ppVisible = xmobarColor "#88C0D0" ""                -- Visible but not current workspace
-                        , ppHidden = xmobarColor "#B48EAD" "" . wrap "*" ""   -- Hidden workspaces in xmobar
-                        , ppHiddenNoWindows = xmobarColor "white" ""        -- Hidden workspaces (no windows)
-                        , ppTitle = xmobarColor "#A3BE8C" "" . shorten 60     -- Title of active window in xmobar
+                        , ppCurrent = xmobarColor "#ff79c6" "" . wrap "[" "]"
+                        , ppVisible = xmobarColor "#50fa7b" ""                -- Visible but not current workspace
+                        , ppHidden = xmobarColor "#8be9fd" "" . wrap "*" ""   -- Hidden workspaces in xmobar
+                        , ppHiddenNoWindows = xmobarColor "#bd93f9" ""        -- Hidden workspaces (no windows)
+                        , ppTitle = xmobarColor "#ff79c6" "" . shorten 60     -- Title of active window in xmobar
                         , ppSep =  "<fc=white> | </fc>"                     -- Separators in xmobar
-                        , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"  -- Urgent workspace
+                        , ppUrgent = xmobarColor "#ff5555" "" . wrap "!" "!"  -- Urgent workspace
                         , ppExtras = [windowCount]
                         , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
                         }
