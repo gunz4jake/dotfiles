@@ -11,7 +11,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = " <icon=/home/jacob/Pictures/xmobar2.xpm/> %StdinReader%}<icon=/home/jacob/Pictures/gentoo_linux.xpm/>{%disku% | %cpu% | %memory% | %dynnetwork% | %date% | %kbd% "
+   , template = " <icon=/home/jacob/Pictures/xmobar/larry.xpm/> %StdinReader%}<icon=/home/jacob/Pictures/xmobar/gentoo_linux.xpm/>{%disku% | %cpu% | %memory% | %dynnetwork% | %date% | %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
