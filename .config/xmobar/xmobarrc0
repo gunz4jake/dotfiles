@@ -4,14 +4,14 @@ Config {
      font =         "xft:IBM Plex Serif:size=12:antialias=true"
    , bgColor =      "#282a36"
    , fgColor =      "#f8f8f2"
-   , position =     Static { xpos=0 , ypos = 0, width = 2560, height = 20 }
+   , position =     Static { xpos=0 , ypos = 0, width = 2560, height = 25 }
    , border =       BottomB
    , borderColor =  "#282a36"
 
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "<icon=/home/jacob/Pictures/xmobar.xpm/> %StdinReader%}{%disku% | %cpu% | %memory% | %dynnetwork% | %date% | %kbd%"
+   , template = " <icon=/home/jacob/Pictures/xmobar2.xpm/> %StdinReader%}<icon=/home/jacob/Pictures/gentoo_linux.xpm/>{%disku% | %cpu% | %memory% | %dynnetwork% | %date% | %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
