@@ -1,0 +1,17 @@
+[[ ! $USER = "jacob" ]] && return
+
+export PS1="\[\e[01;34m\]\W\[\e[m\] \[\e[01;35m\]\\$\[\e[m\] "
+/home/jacob/Scripts/pfetch
+
+  alias up='sudo emerge -uDU --keep-going --with-bdeps=y @world'
+  alias sy='sudo eix-sync'
+  alias re='loginctl reboot'
+  alias sd='loginctl poweroff'
+  alias scl='make clean && rm -f config.h && git reset --hard origin/master'
+  alias dep='sudo emerge --depclean'
+  alias svm="sudo virsh start GamerVM"
+  alias use="sudo emerge --update --newuse --deep --quiet @world"
+  alias startx="/home/jacob/Scripts/startx"
+  alias xinit="/home/jacob/Scripts/startx"
+  alias vpn="/home/jacob/Scripts/vpn.sh"
+  alias nvpn="sudo wg-quick down torguard"
