@@ -1,17 +1,18 @@
 Config {
 
    -- appearance
-     font =         "xft:IBM Plex Serif:size=12:antialias=true"
-   , bgColor =      "#282a36"
-   , fgColor =      "#f8f8f2"
-   , position =     Static { xpos=0 , ypos = 0, width = 2560, height = 25 }
+     font =         "xft:IBM Plex Serif:size=12:antialias=true:hinting=true"
+   , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=16:antialias=true:hinting=true" ]
+   , bgColor =      "#2c2c2c"
+   , fgColor =      "#ffffff"
+   , position =     Static { xpos=0 , ypos = 0, width = 2560, height = 32 }
    , border =       BottomB
-   , borderColor =  "#282a36"
+   , borderColor =  "#4ea8fc"
 
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = " <icon=/home/jacob/Pictures/xmobar/larry.xpm/> %StdinReader%}<icon=/home/jacob/Pictures/xmobar/gentoo_linux.xpm/>{%disku% | %cpu% | %memory% | %dynnetwork% | %date% | %kbd% "
+   , template = " %StdinReader%}{%disku% | %cpu% | %memory% | %dynnetwork% | %date% | %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -38,7 +39,7 @@ Config {
    , commands =
 
         -- network activity monitor (dynamic interface resolution)
-        [ Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s | <rx>kB/s"
+        [ Run DynNetwork     [ "--template" , "<fn=1> </fn> <tx>kB/s <fn=1> </fn> <rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
                              , "--low"      , "#f8f8f2"
@@ -47,11 +48,11 @@ Config {
                              ] 10
 
         -- Cpu usage in percent
-        , Run Cpu ["-t", "CPU: <total>%","-H","50","--high","#ff5555"] 10
+        , Run Cpu ["-t", "<fn=1> </fn> <total>%","-H","50","--high","#ff5555"] 10
 
 
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"MEM: <usedratio>%"
+        , Run Memory         [ "--template" ,"<fn=1> </fn> <usedratio>%"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "90"        -- units: %
                              , "--low"      , "#f8f8f2"
@@ -61,7 +62,7 @@ Config {
 
         -- time and date indicator
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=#f8f8f2>%D (%a) %r</fc>" "date" 10
+        , Run Date           "<fn=1> </fn> <fc=#f8f8f2>%D (%a) %r</fc>" "date" 10
 
         -- keyboard layout indicator
         , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
@@ -69,7 +70,7 @@ Config {
                              ]
         , Run StdinReader
 
-        , Run DiskU [("/", "<free>")]
+        , Run DiskU [("/", "<fn=1> </fn><free>")]
                     ["-L", "20", "-H", "50", "-m", "1", "-p", "3"]
                     20
         ]
